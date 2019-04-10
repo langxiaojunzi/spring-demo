@@ -1,0 +1,9 @@
+server:
+  port: 8008
+spring:
+  banner:
+    location: banner-dev.txt
+  datasource:
+    url: jdbc:mysql://192.168.7.125:3306/test?useUnicode=true&characterEncoding=UTF-8&autoReconnectForPools=true&useSSL=false
+    password: o2otest2017
+    username: o2ouser

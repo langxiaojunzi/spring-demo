@@ -13,6 +13,7 @@
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
       <module name="netty" target="1.8" />
+      <module name="spring-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

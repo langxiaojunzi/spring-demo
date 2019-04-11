@@ -11,6 +11,7 @@ import java.nio.channels.SocketChannel;
  * @author guzhan
  * @since 1.0.0
  */
+@SuppressWarnings("Duplicates")
 public class SocketChannelTest {
     // 阻塞模式
     public static void main(String[] args) throws IOException {

@@ -11,7 +11,7 @@ import java.nio.charset.Charset;
  * @author guzhan
  * @since 1.0.0
  */
-public class ClientChannelHandler implements CompletionHandler<Integer, Attachment>{
+public class ClientChannelHandler implements CompletionHandler<Integer, Attachment> {
     @Override
     public void completed(Integer result, Attachment att) {
         ByteBuffer buffer = att.getBuffer();

@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/dept")
 @Api(tags = "测试")
+@Slf4j
 public class DeptController {
     @Autowired
     private DeptService deptService;
@@ -28,7 +30,7 @@ public class DeptController {
             @ApiImplicitParam(name = "name", value = "名称", required = true),
     })
     public String get(@RequestParam String name) {
-
+        log.error("name={}", name);
         return "hello " + name + " 一定要开心喔！！";
     }
 

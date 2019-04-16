@@ -1,6 +1,7 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.dao.DeptDao;
+import com.example.demo.mapper.DeptMapper;
 import com.example.demo.pojo.Dept;
 import com.example.demo.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,12 @@ import org.springframework.stereotype.Service;
 public class DeptServiceImpl implements DeptService {
     @Autowired
     private DeptDao deptDao;
+    @Autowired
+    private DeptMapper deptMapper;
 
     @Override
     public Dept get(@NonNull final Integer no) {
-        return deptDao.get(no);
+//        return deptDao.get(no);
+        return this.deptMapper.get(no);
     }
 }

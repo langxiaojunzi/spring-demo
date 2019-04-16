@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.pojo;
 
 /**
  * <p>create at 2019/4/15</p>

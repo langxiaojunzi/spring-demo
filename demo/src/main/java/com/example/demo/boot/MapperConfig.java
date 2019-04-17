@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration;
  * @author guzhan
  * @since 1.0.0
  */
-//@Configuration
-//@MapperScan({
-//    "com.example.demo.mapper"
-//})
-//public class MapperConfig {
-//}
+@Configuration
+@MapperScan({
+    "com.example.demo.mapper"
+})
+public class MapperConfig {
+}

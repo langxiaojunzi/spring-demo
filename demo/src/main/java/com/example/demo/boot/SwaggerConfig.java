@@ -7,8 +7,6 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger.web.UiConfiguration;
-import springfox.documentation.swagger.web.UiConfigurationBuilder;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
@@ -22,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
     @Bean
-    public Docket appApi() {
+    public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(
                         new ApiInfoBuilder()
@@ -32,16 +30,8 @@ public class SwaggerConfig {
                                 .build()
                 )
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.demo"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
                 .paths(PathSelectors.any())
-                .build()
-                .enableUrlTemplating(false);
-    }
-
-    @Bean
-    public UiConfiguration uiConfiguration() {
-        return UiConfigurationBuilder.builder()
-                .displayRequestDuration(true)
                 .build();
     }
 }

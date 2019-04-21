@@ -1,6 +1,7 @@
 package com.example.guzhan.mapper;
 
 import com.example.guzhan.pojo.entity.Dept;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface DeptMapper {
-    Dept getDept(@NonNull final Integer no);
+    Dept getDept(@Param("no") @NonNull final Integer no);
 
-    Integer getCount(Integer no);
+    Integer getCount(@Param("no") Integer no);
 }

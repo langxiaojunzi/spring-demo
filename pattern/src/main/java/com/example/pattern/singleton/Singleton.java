@@ -1,12 +1,15 @@
 package com.example.pattern.singleton;
 
+import java.io.ObjectStreamException;
+import java.io.Serializable;
+
 /**
  * <p>create at 2019/4/23</p>
  *
  * @author guzhan
  * @since 1.0.0
  */
-public class Singleton {
+public class Singleton implements Serializable{
     private static final Singleton INSTANCE = new Singleton();
 
     private String name;
@@ -25,6 +28,11 @@ public class Singleton {
     }
 
     public static Singleton getInstance() {
+        return INSTANCE;
+    }
+
+    // 看这里,在反序列化的时候，JVM 会自动调用 readResolve() 这个方法，我们可以在这个方法中替换掉从流中反序列化回来的对象。
+    public Object readResolve() throws ObjectStreamException {
         return INSTANCE;
     }
 }

@@ -8,7 +8,7 @@ import java.lang.reflect.Constructor;
  * @author guzhan
  * @since 1.0.0
  */
-public class App {
+public class ReflectDestroySingleton {
 
     public static void main(String[] args) throws Exception {
         // 由于构造方法上加了 private 修饰，所以我们已经不能通过 ‘new’ 来产生实例了

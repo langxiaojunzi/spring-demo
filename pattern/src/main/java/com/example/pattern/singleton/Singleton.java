@@ -1,4 +1,4 @@
-package com.example.netty.pattern;
+package com.example.pattern.singleton;
 
 /**
  * <p>create at 2019/4/23</p>

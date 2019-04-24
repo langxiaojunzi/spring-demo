@@ -1,4 +1,4 @@
-package com.example.netty.pattern;
+package com.example.pattern.singleton;
 
 import java.lang.reflect.Constructor;
 
@@ -14,11 +14,8 @@ public class App {
         // 由于构造方法上加了 private 修饰，所以我们已经不能通过 ‘new’ 来产生实例了
         // Singleton intance = new Singleton();
 
-        Singleton instance = Singleton. getInstance();
-        System.out.println(instance.getName());
-
-
         Singleton instance1 = Singleton.getInstance();
+        System.out.println(instance1.getName());
 
         // 下面我们通过反射得到其构造方法，并且修改其构造方法的访问权限，并用这个构造方法构造一个对象
         Constructor constructor = Singleton.class.getDeclaredConstructor();

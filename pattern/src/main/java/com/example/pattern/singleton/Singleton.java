@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author guzhan
  * @since 1.0.0
  */
-public class Singleton implements Serializable{
+public class Singleton implements Serializable {
     private static final Singleton INSTANCE = new Singleton();
 
     private String name;

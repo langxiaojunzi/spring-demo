@@ -13,6 +13,10 @@ public class ReflectDestroySingleton {
     public static void main(String[] args) throws Exception {
         // 由于构造方法上加了 private 修饰，所以我们已经不能通过 ‘new’ 来产生实例了
         // Singleton intance = new Singleton();
+        Class singleton = Singleton.class;
+        System.out.println(singleton);
+
+
         Singleton instance = Singleton.getInstance();
         System.out.println(instance);
         System.out.println(instance.getName());

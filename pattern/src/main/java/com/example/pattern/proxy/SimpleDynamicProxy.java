@@ -21,10 +21,6 @@ public class SimpleDynamicProxy {
 //        consumer(real);
 //        System.out.println("--------------动态代理--------------");
 //        // Insert a proxy and call again:
-//
-//
-//
-//
 //        Interface proxy = (Interface) Proxy.newProxyInstance(
 //                Interface.class.getClassLoader(),
 //                new Class[]{Interface.class},

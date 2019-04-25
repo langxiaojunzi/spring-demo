@@ -7,6 +7,8 @@ package com.example.pattern.proxy;
  * @since 1.0.0
  */
 public interface Interface {
+
     void doSomething();
+
     void somethingElse(String arg);
 }

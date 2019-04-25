@@ -7,9 +7,11 @@ package com.example.pattern.proxy;
  * @since 1.0.0
  */
 public class RealObject implements Interface {
+
     public void doSomething() {
         System.out.println("doSomething");
     }
+
     public void somethingElse(String arg) {
         System.out.println("somethingElse " + arg);
     }

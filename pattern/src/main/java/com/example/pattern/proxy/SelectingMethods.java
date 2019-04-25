@@ -20,6 +20,7 @@ public class SelectingMethods {
                 real.getClass().getInterfaces(),
 //                new MethodSelector(new Implementation()));
                 handler);
+        System.out.println(proxy.getClass().getName());
         proxy.boring1();
         proxy.boring2();
         proxy.interesting("bonobo");

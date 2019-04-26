@@ -4,9 +4,12 @@ import java.math.BigInteger;
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.IntSupplier;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 /**
  * <p>create at 2019/4/22</p>
@@ -100,12 +103,31 @@ public final class FunctionUtil {
 
         int sum = Arrays.stream(new int[] {1, 2, 3})
                 .reduce((a, b) -> a + b)
-                .getAsInt();
+                .orElse(0);
         System.out.println(sum);
 
         int total = Stream.of("1", "2", "3").mapToInt(Integer::parseInt).sum();
 //                .collect(Collectors.summingInt(s -> Integer.parseInt(s)));
         System.out.println(total);
+
+        Optional<String> a = Optional.of("a");
+        System.out.println("a".equals(a.get()));
+        System.out.println("a".equals(a.orElse("a")));
+        Optional empty = Optional.empty();
+        Optional empty2 = Optional.ofNullable(null);
+        System.out.println(empty == empty2);
+
+        List<String> list1 = Stream.of("aa", "1wew", "333sadf").collect(toList());
+        String min = list1.stream().min(Comparator.comparing(String::length)).orElse(null);
+        System.out.println(min);
+        System.out.println(list1);
+        List<String> list2 = Arrays.asList("111", "222", "333");
+        System.out.println(list2);
+        List<Integer> together = Stream.of(Arrays.asList(1, 2), Arrays.asList(3, 4))
+                .flatMap(n -> n.stream())
+                .collect(toList());
+        System.out.println(together);
+
     }
 
 }

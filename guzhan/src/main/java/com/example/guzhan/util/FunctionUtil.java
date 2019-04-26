@@ -9,6 +9,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.partitioningBy;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -97,34 +98,37 @@ public final class FunctionUtil {
                 .collect(Collectors.groupingBy(v -> v.charAt(0)));
         System.out.println(names);
 
-        String str = Stream.of("a", "b", "c")
-                .collect(Collectors.joining(", "));
-        System.out.println(str);
-
-        int sum = Arrays.stream(new int[] {1, 2, 3})
-                .reduce((a, b) -> a + b)
-                .orElse(0);
-        System.out.println(sum);
-
-        int total = Stream.of("1", "2", "3").mapToInt(Integer::parseInt).sum();
-//                .collect(Collectors.summingInt(s -> Integer.parseInt(s)));
-        System.out.println(total);
-
-        Optional<String> a = Optional.of("a");
-        System.out.println("a".equals(a.get()));
-        System.out.println("a".equals(a.orElse("a")));
-        Optional empty = Optional.empty();
-        Optional empty2 = Optional.ofNullable(null);
-        System.out.println(empty == empty2);
+//        String str = Stream.of("a", "b", "c")
+//                .collect(Collectors.joining(", "));
+//        System.out.println(str);
+//
+//        int sum = Arrays.stream(new int[] {1, 2, 3})
+//                .reduce((a, b) -> a + b)
+//                .orElse(0);
+//        System.out.println(sum);
+//
+//        int total = Stream.of("1", "2", "3").mapToInt(Integer::parseInt).sum();
+////                .collect(Collectors.summingInt(s -> Integer.parseInt(s)));
+//        System.out.println(total);
+//
+//        Optional<String> a = Optional.of("a");
+//        System.out.println("a".equals(a.get()));
+//        System.out.println("a".equals(a.orElse("a")));
+//        Optional empty = Optional.empty();
+//        Optional empty2 = Optional.ofNullable(null);
+//        System.out.println(empty == empty2);
 
         List<String> list1 = Stream.of("aa", "1wew", "333sadf").collect(toList());
+        Map<Boolean, List<String>> map = list1.stream().collect(partitioningBy(s -> s.startsWith("a")));
+        System.out.println(map);
         String min = list1.stream().min(Comparator.comparing(String::length)).orElse(null);
         System.out.println(min);
         System.out.println(list1);
         List<String> list2 = Arrays.asList("111", "222", "333");
         System.out.println(list2);
-        List<Integer> together = Stream.of(Arrays.asList(1, 2), Arrays.asList(3, 4))
-                .flatMap(n -> n.stream())
+        List<Integer> together = Stream.of(Arrays.asList(1, 2), Arrays.asList(3, 4, 11))
+//                .flatMap(number -> number.stream())
+                .flatMap(List::stream)
                 .collect(toList());
         System.out.println(together);
 

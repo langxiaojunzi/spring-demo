@@ -19,4 +19,10 @@ public class Dept {
     private Integer no;
     private String name;
     private Integer number;
+
+    public Dept(Integer no, String name, Integer number) {
+        this.no = no;
+        this.name = name;
+        this.number = number;
+    }
 }

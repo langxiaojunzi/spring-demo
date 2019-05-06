@@ -19,10 +19,19 @@ public class Dept {
     private Integer no;
     private String name;
     private Integer number;
+    private Boolean isDeleted;
 
     public Dept(Integer no, String name, Integer number) {
         this.no = no;
         this.name = name;
         this.number = number;
     }
+
+//    public Boolean getDeleted() {
+//        return isDeleted;
+//    }
+//
+//    public void setDeleted(Boolean deleted) {
+//        isDeleted = deleted;
+//    }
 }

@@ -11,7 +11,7 @@ import java.util.concurrent.*;
  * @author guzhan
  * @since 1.0.0
  */
-public class ManualDiceRolls {
+public final class ManualDiceRolls {
 
     private static final int N = 100000000;
     private final double fraction;

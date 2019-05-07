@@ -15,7 +15,7 @@ public class App {
 //        macro.record(new Close(editor));
         macro.run();
 
-
+        // 使用Lambda 表达式构建宏
 //        Macro macro = new Macro();
 //        macro.record(() -> editor.open());
 //        macro.record(() -> editor.save());

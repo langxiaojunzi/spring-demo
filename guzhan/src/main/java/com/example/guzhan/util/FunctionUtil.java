@@ -129,6 +129,7 @@ public final class FunctionUtil {
         List<Integer> together = Stream.of(Arrays.asList(1, 2), Arrays.asList(3, 4, 11))
 //                .flatMap(number -> number.stream())
                 .flatMap(List::stream)
+                .peek(System.out::println)
                 .collect(toList());
         System.out.println(together);
 

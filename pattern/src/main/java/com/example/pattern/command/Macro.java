@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class Macro {
 
+    // 命令发起者
     private final List<Action> actions;
 
     public Macro() {

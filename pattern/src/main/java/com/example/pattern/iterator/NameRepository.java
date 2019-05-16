@@ -14,6 +14,7 @@ public class NameRepository implements Container {
         return new StringArrayIterator(names);
     }
 
+      // 匿名内部类提取出公共方法 StringArrayIterator
 //    private class NameIterator implements Iterator {
 //        int index;
 //

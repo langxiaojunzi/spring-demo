@@ -9,6 +9,21 @@ spring:
     url: jdbc:mysql://192.168.7.125:3306/test?useUnicode=true&characterEncoding=UTF-8&autoReconnectForPools=true&useSSL=false
     password: o2otest2017
     username: o2ouser
+
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+
 mybatis:
   mapper-locations: classpath:com.example.guzhan.mapper/*.xml
   type-aliases-package: com.example.guzhan.pojo.entity
+
+

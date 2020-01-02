@@ -11,11 +11,11 @@ import java.lang.reflect.Proxy;
  */
 public class SimpleDynamicProxy {
 
-//    public static void consumer(Interface iface) {
-//        iface.doSomething();
-//        iface.somethingElse("bonobo");
-//    }
-//
+    public static void consumer(Interface iface) {
+        iface.doSomething();
+        iface.somethingElse("bonobo");
+    }
+
 //    public static void main(String[] args) {
 //        RealObject real = new RealObject();
 //        consumer(real);

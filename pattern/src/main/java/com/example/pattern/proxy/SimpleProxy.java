@@ -11,6 +11,7 @@ public class SimpleProxy implements Interface {
     public SimpleProxy(Interface proxied) {
         this.proxied = proxied;
     }
+
     public void doSomething() {
         System.out.println("SimpleProxy doSomething");
         proxied.doSomething();
